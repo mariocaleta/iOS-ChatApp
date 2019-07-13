@@ -41,6 +41,9 @@
 		9662D46E22D3C2DD0043FD10 /* UsersAroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9662D46D22D3C2DD0043FD10 /* UsersAroundViewController.swift */; };
 		9662D47022D3EB4E0043FD10 /* UsersAroundCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9662D46F22D3EB4E0043FD10 /* UsersAroundCollectionViewCell.swift */; };
 		9662D47222D4A44C0043FD10 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9662D47122D4A44C0043FD10 /* MapViewController.swift */; };
+		9662D47422D4B6BE0043FD10 /* UserAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9662D47322D4B6BE0043FD10 /* UserAnnotation.swift */; };
+		9662D47622D4BE3A0043FD10 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9662D47522D4BE3A0043FD10 /* DetailViewController.swift */; };
+		9662D47822D4CBE30043FD10 /* MapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9662D47722D4CBE30043FD10 /* MapTableViewCell.swift */; };
 		C507223DA51451285A4BD0D3 /* Pods_ChatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0788666C2C21742431041F0 /* Pods_ChatApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +85,9 @@
 		9662D46D22D3C2DD0043FD10 /* UsersAroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersAroundViewController.swift; sourceTree = "<group>"; };
 		9662D46F22D3EB4E0043FD10 /* UsersAroundCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersAroundCollectionViewCell.swift; sourceTree = "<group>"; };
 		9662D47122D4A44C0043FD10 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		9662D47322D4B6BE0043FD10 /* UserAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAnnotation.swift; sourceTree = "<group>"; };
+		9662D47522D4BE3A0043FD10 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		9662D47722D4CBE30043FD10 /* MapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTableViewCell.swift; sourceTree = "<group>"; };
 		C0788666C2C21742431041F0 /* Pods_ChatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA609F7ADB84C58EF68132AF /* Pods-ChatApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApp.debug.xcconfig"; path = "Target Support Files/Pods-ChatApp/Pods-ChatApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,6 +163,7 @@
 				9662D45322CCB5BF0043FD10 /* User.swift */,
 				9662D45B22CD25900043FD10 /* Message.swift */,
 				9662D46122D26E750043FD10 /* Inbox.swift */,
+				9662D47322D4B6BE0043FD10 /* UserAnnotation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -179,6 +186,7 @@
 				9662D46722D283360043FD10 /* ProfileTableViewController.swift */,
 				9662D46D22D3C2DD0043FD10 /* UsersAroundViewController.swift */,
 				9662D47122D4A44C0043FD10 /* MapViewController.swift */,
+				9662D47522D4BE3A0043FD10 /* DetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -190,6 +198,7 @@
 				9662D45D22CDE74B0043FD10 /* MessageTableViewCell.swift */,
 				9662D46322D270740043FD10 /* InboxTableViewCell.swift */,
 				9662D46F22D3EB4E0043FD10 /* UsersAroundCollectionViewCell.swift */,
+				9662D47722D4CBE30043FD10 /* MapTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -219,6 +228,7 @@
 				9662D41722C7DB2D0043FD10 /* Frameworks */,
 				9662D41822C7DB2D0043FD10 /* Resources */,
 				D8DEBD13C31495D470BA3E36 /* [CP] Embed Pods Frameworks */,
+				8AA1C30374CB2B776163D29A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -299,6 +309,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8AA1C30374CB2B776163D29A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChatApp/Pods-ChatApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChatApp/Pods-ChatApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChatApp/Pods-ChatApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D8DEBD13C31495D470BA3E36 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -330,6 +357,7 @@
 				9662D46422D270740043FD10 /* InboxTableViewCell.swift in Sources */,
 				9662D43E22C8F15D0043FD10 /* SignInViewController+UI.swift in Sources */,
 				9662D45222CC8E890043FD10 /* UserTableViewCell.swift in Sources */,
+				9662D47622D4BE3A0043FD10 /* DetailViewController.swift in Sources */,
 				9662D45022CC8C4C0043FD10 /* PeopleTableViewController.swift in Sources */,
 				9662D46222D26E750043FD10 /* Inbox.swift in Sources */,
 				9662D46822D283360043FD10 /* ProfileTableViewController.swift in Sources */,
@@ -339,6 +367,8 @@
 				9662D47222D4A44C0043FD10 /* MapViewController.swift in Sources */,
 				9662D47022D3EB4E0043FD10 /* UsersAroundCollectionViewCell.swift in Sources */,
 				9662D45422CCB5BF0043FD10 /* User.swift in Sources */,
+				9662D47822D4CBE30043FD10 /* MapTableViewCell.swift in Sources */,
+				9662D47422D4B6BE0043FD10 /* UserAnnotation.swift in Sources */,
 				9662D44222C8FB450043FD10 /* ForgotPasswordViewController+UI.swift in Sources */,
 				9662D45622CCBB3D0043FD10 /* Extension.swift in Sources */,
 				9662D44C22CAADF00043FD10 /* Ref.swift in Sources */,

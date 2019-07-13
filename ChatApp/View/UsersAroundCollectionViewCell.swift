@@ -31,9 +31,9 @@ class UsersAroundCollectionViewCell: UICollectionViewCell {
     func loadData(_ user: User, currentLocation: CLLocation?) {
         self.user = user
         self.avatar.loadImage(user.profileImageUrl)
-   //     self.avatar.loadImage(user.profileImageUrl) { (image) in
-   //         user.profileImage = image
-   //     }
+        self.avatar.loadImage(user.profileImageUrl) { (image) in
+            user.profileImage = image
+        }
         if let age = user.age {
             self.ageLabel.text = "\(age)"
         } else {

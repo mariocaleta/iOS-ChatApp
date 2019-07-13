@@ -12,6 +12,7 @@ import FirebaseAuth
 import ProgressHUD
 import FirebaseStorage
 import FirebaseDatabase
+import GoogleSignIn
 
 class UserApi {
     
@@ -95,6 +96,18 @@ class UserApi {
         let uid = Api.User.currentUserId
         do {
             Api.User.isOnline(bool: false)
+            
+            if let providerData = Auth.auth().currentUser?.providerData {
+                let userInfo = providerData[0]
+                
+                switch userInfo.providerID {
+                case "google.com":
+                    GIDSignIn.sharedInstance()?.signOut()
+                default:
+                    break
+                }
+            }
+            
             try Auth.auth().signOut()
             Messaging.messaging().unsubscribe(fromTopic: uid)
         } catch {

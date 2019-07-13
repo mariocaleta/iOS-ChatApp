@@ -14,5 +14,7 @@ pod 'Firebase/Messaging'
 pod 'ProgressHUD'
 pod 'SDWebImage'
 pod 'GeoFire', :git => 'https://github.com/firebase/geofire-objc.git'
+pod 'FBSDKLoginKit'
+pod 'GoogleSignIn'
 
 end

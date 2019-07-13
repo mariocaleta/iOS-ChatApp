@@ -128,7 +128,7 @@ class UsersAroundViewController: UIViewController {
     @IBAction func mapButtonTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Welcome", bundle: nil)
         let mapVC = storyboard.instantiateViewController(withIdentifier: IDENTIFIER_MAP) as! MapViewController
-     //   mapVC.users = self.users
+        mapVC.users = self.users
         self.navigationController?.pushViewController(mapVC, animated: true)
     }
     
@@ -176,10 +176,9 @@ extension UsersAroundViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? UsersAroundCollectionViewCell {
             let storyboard = UIStoryboard(name: "Welcome", bundle: nil)
-   //         let detailVC = storyboard.instantiateViewController(withIdentifier: IDENTIFIER_DETAIL) as! DetailViewController
-  //          detailVC.user = cell.user
-  //
-  //          self.navigationController?.pushViewController(detailVC, animated: true)
+            let detailVC = storyboard.instantiateViewController(withIdentifier: IDENTIFIER_DETAIL) as! DetailViewController
+            detailVC.user = cell.user
+            self.navigationController?.pushViewController(detailVC, animated: true)
         }
     }
     

@@ -40,6 +40,7 @@ let IDENTIFIER_WELCOME = "WelcomeVC"
 let IDENTIFIER_CHAT = "ChatVC"
 let IDENTIFIER_USER_AROUND = "UsersAroundViewController"
 let IDENTIFIER_MAP = "MapViewController"
+let IDENTIFIER_DETAIL = "DetailViewController"
 
 let IDENTIFIER_CELL_USERS = "UserTableViewCell"
 

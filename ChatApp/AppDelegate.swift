@@ -10,6 +10,8 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import UserNotifications
+import FBSDKCoreKit
+import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,7 +22,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     static var isToken: String? = nil
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+        InstanceID.instanceID().instanceID { (result, error) in
+            if let error = error {
+                print("Error fetching remote instange ID: \(error)")
+            } else if let result = result {
+                print("Remote instance ID token: \(result.token)")
+                AppDelegate.isToken = result.token
+            }
+        }
         UINavigationBar.appearance().tintColor = UIColor(red: 93/255, green: 79/255, blue: 141/255, alpha: 1)
         let backImg = UIImage(named: "back")
         UINavigationBar.appearance().backIndicatorImage = backImg
@@ -54,9 +63,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             application.registerForRemoteNotifications()
         }
         
+        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
+        
         return true
     }
 
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        var handled = false
+        
+        if url.absoluteString.contains("fb") {
+            handled = ApplicationDelegate.shared.application(app, open: url, options: options)
+        } else {
+            handled = GIDSignIn.sharedInstance()!.handle(url, sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String, annotation: [:])
+        }
+        
+        
+        return handled
+    }
+    
     func configureInitialViewController() {
         var initialVC: UIViewController
         let storyboard = UIStoryboard(name: "Welcome", bundle: nil)
